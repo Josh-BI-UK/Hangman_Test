@@ -90,7 +90,7 @@ class Hangman:
                     self.list_letter.append(letter)
                     self.num_letters -= 1
                     self.turns = ''.join(self.word_guessed).count('_')
-
+                    print(f"Number of turns = ",{self.turns})
         else:
             self.num_lives -= 1
             print(f"Sorry you letter '",{self.letter},"' is not part of the magic word.")
@@ -108,7 +108,7 @@ class Hangman:
     def ask_letter(self):
 
         i = self.num_lives
-        while i > 0:
+        while i > -1:
             print('Please type a letter')
             letter = input()
             if len(letter) != 1:
@@ -148,7 +148,6 @@ def play_game(word_list):
         #print("i'm there in the code -option 2-")
         print("Congratulations, you won!")
         print(f"The word was {game.word}")
-        
 
     # DONE TODO 1d: To test this task, you can call the ask_letter method
     # TODO 2d: To test this task, upon initialization, two messages should be printed. 
@@ -158,9 +157,10 @@ def play_game(word_list):
     # If the user guesses the word, print "Congratulations, you won!"
     # If the user runs out of lives, print "You ran out of lives. The word was {word}"
 
+    pass
 
 if __name__ == '__main__':
-    # word_list = ['apple', 'banana', 'orange', 'pear', 'strawberry', 'watermelon']
-    word_list = ['apple']
+    word_list = ['apple', 'banana', 'orange', 'pear', 'strawberry', 'watermelon']
+    # word_list = ['apple']
     play_game(word_list)
 # %%
